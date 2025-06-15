@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: TabBarConfig
+  m_EditorClassIdentifier: Assembly-CSharp::TabBarConfigSO
+  icons:
+  - iconName: Home
+    iconSprite: {fileID: 21300000, guid: 86031bd21f41b4e92a956ab631575be9, type: 3}
+  - iconName: Shop
+    iconSprite: {fileID: 21300000, guid: baa1a42e6297d4bf2ac3f20f421d182e, type: 3}
+  - iconName: Album
+    iconSprite: {fileID: 21300000, guid: d72d31adcf23846dab770e932abc9913, type: 3}
+  tabCount: 5
+  tabConfigs:
+  - state: 0
+    iconName: sdsd
+  - state: 1
+    iconName: Shop
+  - state: 2
+    iconName: Home
+  - state: 1
+    iconName: Album
+  - state: 0
+    iconName: 
