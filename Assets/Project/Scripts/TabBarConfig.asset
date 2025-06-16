@@ -22,7 +22,7 @@ MonoBehaviour:
   tabCount: 5
   tabConfigs:
   - state: 0
-    iconName: sdsd
+    iconName: 
   - state: 1
     iconName: Shop
   - state: 2
