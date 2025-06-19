@@ -23,11 +23,16 @@ MonoBehaviour:
   tabConfigs:
   - state: 0
     iconName: 
+    localizationKey: 
   - state: 1
     iconName: Shop
+    localizationKey: bar.shop
   - state: 2
     iconName: Home
+    localizationKey: bar.home
   - state: 1
     iconName: Album
+    localizationKey: bar.album
   - state: 0
     iconName: 
+    localizationKey: 

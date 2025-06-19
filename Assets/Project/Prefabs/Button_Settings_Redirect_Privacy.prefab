@@ -8,6 +8,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 878820348347870549, guid: 2479d083ab73240338f2e74f0cab45ea, type: 3}
+      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
+      value: 8532488347648
+      objectReference: {fileID: 0}
+    - target: {fileID: 878820348347870549, guid: 2479d083ab73240338f2e74f0cab45ea, type: 3}
+      propertyPath: m_StringReference.m_TableReference.m_TableCollectionName
+      value: GUID:05a3bab6be0f74f3da50e12242cfaca6
+      objectReference: {fileID: 0}
     - target: {fileID: 937099549266485121, guid: 2479d083ab73240338f2e74f0cab45ea, type: 3}
       propertyPath: m_Name
       value: Button_Settings_Redirect_Privacy
@@ -18,7 +26,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 978470597007407311, guid: 2479d083ab73240338f2e74f0cab45ea, type: 3}
       propertyPath: m_fontSize
-      value: 60.85
+      value: 70.8
       objectReference: {fileID: 0}
     - target: {fileID: 2122643745321554494, guid: 2479d083ab73240338f2e74f0cab45ea, type: 3}
       propertyPath: m_AnchoredPosition.y

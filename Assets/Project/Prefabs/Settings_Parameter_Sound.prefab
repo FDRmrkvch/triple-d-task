@@ -8,9 +8,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2532773796060531955, guid: ef36769412b97442191450bf1bf8d49c, type: 3}
-      propertyPath: m_text
-      value: Sound
+    - target: {fileID: 2610186586557403105, guid: ef36769412b97442191450bf1bf8d49c, type: 3}
+      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
+      value: 7568373047296
+      objectReference: {fileID: 0}
+    - target: {fileID: 2610186586557403105, guid: ef36769412b97442191450bf1bf8d49c, type: 3}
+      propertyPath: m_StringReference.m_TableReference.m_TableCollectionName
+      value: GUID:05a3bab6be0f74f3da50e12242cfaca6
       objectReference: {fileID: 0}
     - target: {fileID: 3120145615838095572, guid: ef36769412b97442191450bf1bf8d49c, type: 3}
       propertyPath: m_Name
@@ -116,10 +120,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8491102860591803253, guid: ef36769412b97442191450bf1bf8d49c, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 06911d3940b8c482281102f4819bb485, type: 3}
     - target: {fileID: 8981156208768300969, guid: ef36769412b97442191450bf1bf8d49c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

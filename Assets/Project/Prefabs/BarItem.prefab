@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 1573680860146626658}
   - component: {fileID: 4499932663666135221}
   - component: {fileID: 6429403467869156038}
+  - component: {fileID: 7941289056014223659}
   m_Layer: 8
   m_Name: Text
   m_TagString: Untagged
@@ -141,7 +142,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Home
+  m_text: Text
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5287d7e5fe3014a16a38d730660128a1, type: 2}
   m_sharedMaterial: {fileID: -2227628869080592770, guid: 5287d7e5fe3014a16a38d730660128a1, type: 2}
@@ -210,6 +211,46 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &7941289056014223659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2204040093876805367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:05a3bab6be0f74f3da50e12242cfaca6
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6429403467869156038}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &2458145945077093327
 GameObject:
   m_ObjectHideFlags: 0
@@ -339,7 +380,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 86031bd21f41b4e92a956ab631575be9, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -598,9 +639,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   iconImage: {fileID: 4342421694939859732}
+  localizeStringEvent: {fileID: 7941289056014223659}
   animator: {fileID: 9057103408153367027}
   button: {fileID: 1459559891270538316}
-  startingState: 1
   trigger_LockedPressed: Locked_Pressed
   trigger_SelectedPressed: Selected_Pressed
   trigger_Select: Select

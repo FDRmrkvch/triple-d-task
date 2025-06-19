@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: LocalizationConfig
+  m_EditorClassIdentifier: Assembly-CSharp::LocaleFlagConfigSO
+  localeFlags:
+  - localeCode: en
+    flagSprite: {fileID: 21300000, guid: 5ff64861bd213411982d0b4731431b66, type: 3}
+  - localeCode: de
+    flagSprite: {fileID: 21300000, guid: d94a848dc3857499e8574d853fc0f7b8, type: 3}
+  - localeCode: pl
+    flagSprite: {fileID: 21300000, guid: 60a109d2d05a240ec8752533342f8473, type: 3}

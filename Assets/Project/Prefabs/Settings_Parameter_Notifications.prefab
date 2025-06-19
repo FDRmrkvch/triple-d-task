@@ -12,6 +12,14 @@ PrefabInstance:
       propertyPath: m_text
       value: Notifications
       objectReference: {fileID: 0}
+    - target: {fileID: 2610186586557403105, guid: ef36769412b97442191450bf1bf8d49c, type: 3}
+      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
+      value: 7792399212544
+      objectReference: {fileID: 0}
+    - target: {fileID: 2610186586557403105, guid: ef36769412b97442191450bf1bf8d49c, type: 3}
+      propertyPath: m_StringReference.m_TableReference.m_TableCollectionName
+      value: GUID:05a3bab6be0f74f3da50e12242cfaca6
+      objectReference: {fileID: 0}
     - target: {fileID: 3120145615838095572, guid: ef36769412b97442191450bf1bf8d49c, type: 3}
       propertyPath: m_Name
       value: Settings_Parameter_Notifications

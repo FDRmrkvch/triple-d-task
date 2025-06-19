@@ -20,6 +20,7 @@ public class TabConfig
 {
     public TabState state;
     public string iconName;
+    public string localizationKey;
 }
 
 [CreateAssetMenu(fileName = "TabBarConfig", menuName = "UI/Tab Bar Config")]

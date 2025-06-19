@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Localization.Components;
 using System;
 
 [RequireComponent(typeof(Animator), typeof(Button))]
@@ -9,6 +10,7 @@ public class BarItemController : MonoBehaviour
 
     [Header("UI")]
     [SerializeField] private Image iconImage;
+    [SerializeField] private LocalizeStringEvent localizeStringEvent;
 
     [Header("Animator")]
     [SerializeField] private Animator animator;
@@ -65,6 +67,20 @@ public class BarItemController : MonoBehaviour
         else
         {
             Debug.LogWarning("[BarItem] Icon not set: iconImage or sprite is null.");
+        }
+    }
+
+    public void SetLocalizedKey(string localizationKey)
+    {
+        if (localizeStringEvent != null)
+        {
+            localizeStringEvent.StringReference.TableEntryReference = localizationKey;
+            localizeStringEvent.RefreshString();
+            Debug.Log($"[BarItem] Localized string key set to: {localizationKey}");
+        }
+        else
+        {
+            Debug.LogWarning("[BarItem] LocalizeStringEvent reference is missing.");
         }
     }
 
