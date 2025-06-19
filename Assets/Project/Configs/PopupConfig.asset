@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   popups:
   - popupName: Popup_Settings
-    popupPrefab: {fileID: 7218017625911356020, guid: 3b3dbfc010f794feb8de13d63ce3a516, type: 3}
+    popupPrefab: {fileID: 8513247080396342119, guid: c2954368bf8a44a1c90310433fc1527e, type: 3}
   - popupName: CompletedScreen
     popupPrefab: {fileID: 7218017625911356020, guid: d84579046d5b9467e88acfe20aad9bf0, type: 3}
