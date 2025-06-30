@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 01223beb2c1634bf3bcfa9b7ff73b16a, type: 3}
   m_Name: LocalizationConfig
-  m_EditorClassIdentifier: Assembly-CSharp::LocaleFlagConfigSO
+  m_EditorClassIdentifier: 
   localeFlags:
   - localeCode: en
     flagSprite: {fileID: 21300000, guid: 5ff64861bd213411982d0b4731431b66, type: 3}

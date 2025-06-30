@@ -3,12 +3,15 @@ using UnityEngine.UI;
 using UnityEngine.Localization.Components;
 using System;
 
+/// <summary>
+/// UI controller for a single tab bar item with state management, icon, localization, and animation handling.
+/// </summary>
 [RequireComponent(typeof(Animator), typeof(Button))]
 public class BarItemController : MonoBehaviour
 {
     public enum State { Locked, Unlocked, Selected }
 
-    [Header("UI")]
+    [Header("UI References")]
     [SerializeField] private Image iconImage;
     [SerializeField] private LocalizeStringEvent localizeStringEvent;
 
@@ -29,18 +32,23 @@ public class BarItemController : MonoBehaviour
     [SerializeField] private string state_Unlocked = "Unlocked";
     [SerializeField] private string state_Selected = "Selected";
 
-    public Action<BarItemController> OnSelected;
+    public System.Action<BarItemController> OnSelected;
 
     private State currentState;
 
     private void Awake()
     {
-        if (!animator) animator = GetComponent<Animator>();
-        if (!button) button = GetComponent<Button>();
+        // Auto-assign required references if not set
+        animator ??= GetComponent<Animator>();
+        button ??= GetComponent<Button>();
 
+        // Add click listener
         button.onClick.AddListener(OnClick);
     }
 
+    /// <summary>
+    /// Initializes the item with a given visual state.
+    /// </summary>
     public void Initialize(State state)
     {
         currentState = state;
@@ -48,7 +56,7 @@ public class BarItemController : MonoBehaviour
 
         if (!string.IsNullOrEmpty(stateName))
         {
-            animator.Play(stateName, 0, 1f);
+            animator.Play(stateName, 0, 1f); // Set to exact state without playing transition
             Debug.Log($"[BarItem] Initialized with state: {state}");
         }
         else
@@ -57,37 +65,42 @@ public class BarItemController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Sets the icon sprite for the tab item.
+    /// </summary>
     public void SetIcon(Sprite sprite)
     {
         if (iconImage && sprite)
         {
             iconImage.sprite = sprite;
-            Debug.Log($"[BarItem] Icon set to: {sprite.name}");
         }
         else
         {
-            Debug.LogWarning("[BarItem] Icon not set: iconImage or sprite is null.");
+            Debug.LogWarning("[BarItem] Icon or sprite is missing.");
         }
     }
 
+    /// <summary>
+    /// Updates the localized string based on key.
+    /// </summary>
     public void SetLocalizedKey(string localizationKey)
     {
-        if (localizeStringEvent != null)
+        if (localizeStringEvent)
         {
             localizeStringEvent.StringReference.TableEntryReference = localizationKey;
             localizeStringEvent.RefreshString();
-            Debug.Log($"[BarItem] Localized string key set to: {localizationKey}");
         }
         else
         {
-            Debug.LogWarning("[BarItem] LocalizeStringEvent reference is missing.");
+            Debug.LogWarning("[BarItem] Missing LocalizeStringEvent reference.");
         }
     }
 
+    /// <summary>
+    /// Handles button click and state transition logic.
+    /// </summary>
     private void OnClick()
     {
-        Debug.Log($"[BarItem] Clicked — current state: {currentState}");
-
         switch (currentState)
         {
             case State.Locked:
@@ -95,9 +108,9 @@ public class BarItemController : MonoBehaviour
                 break;
 
             case State.Unlocked:
-                OnSelected?.Invoke(this);
                 animator.SetTrigger(trigger_Select);
                 currentState = State.Selected;
+                OnSelected?.Invoke(this);
                 break;
 
             case State.Selected:
@@ -106,13 +119,18 @@ public class BarItemController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Deselects the item and returns it to the unlocked state.
+    /// </summary>
     public void Deselect()
     {
-        Debug.Log("[BarItem] Deselecting...");
         animator.SetTrigger(trigger_Unselect);
         currentState = State.Unlocked;
     }
 
+    /// <summary>
+    /// Returns the animator state name based on internal enum.
+    /// </summary>
     private string GetStateName(State state) => state switch
     {
         State.Locked => state_Locked,

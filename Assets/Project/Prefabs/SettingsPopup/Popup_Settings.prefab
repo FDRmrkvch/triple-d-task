@@ -235,7 +235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff7a7da5a6ac54e1a864009630fb4496, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  config: {fileID: 11400000, guid: 578f0baf580174466a227f3ce17f2b28, type: 2}
+  config: {fileID: 11400000, guid: e2c281c13fa4742a9913d323756daa3c, type: 2}
   flagImage: {fileID: 8594653658121119348}
   switchButton: {fileID: 1269266140027417223}
 --- !u!1 &3045834832745479579

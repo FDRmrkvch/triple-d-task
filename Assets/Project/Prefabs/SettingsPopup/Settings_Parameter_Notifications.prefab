@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 28406669592914086, guid: ef36769412b97442191450bf1bf8d49c, type: 3}
+      propertyPath: toggleName
+      value: Notifications
+      objectReference: {fileID: 0}
     - target: {fileID: 2532773796060531955, guid: ef36769412b97442191450bf1bf8d49c, type: 3}
       propertyPath: m_text
       value: Notifications

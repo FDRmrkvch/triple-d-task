@@ -157,8 +157,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c16dbbfe4ca8341d980ff9b3f7a3f8bc, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: 5f122a9649adb4c768e1d2ad493d22fd, type: 3}
+  m_Type: 1
   m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
@@ -248,8 +248,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c16dbbfe4ca8341d980ff9b3f7a3f8bc, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: 5f122a9649adb4c768e1d2ad493d22fd, type: 3}
+  m_Type: 1
   m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
@@ -282,8 +282,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 31809924747568435}
-  - component: {fileID: 3133515047981524213}
   - component: {fileID: 3744183121415805725}
+  - component: {fileID: 1613528456630685386}
+  - component: {fileID: 7315875509543231255}
+  - component: {fileID: 5627185927920942919}
+  - component: {fileID: 6918180991653212292}
   m_Layer: 9
   m_Name: Switch_Togle
   m_TagString: Untagged
@@ -313,7 +316,44 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 193, y: 109}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &3133515047981524213
+--- !u!114 &3744183121415805725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7414382245991600218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a729a0a6f1ca6447bb3738f379d4211f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toggleData: {fileID: 11400000, guid: 370e07177e7c046c380431ad072c16a6, type: 2}
+  toggleName: 
+  animator: {fileID: 1613528456630685386}
+  button: {fileID: 0}
+--- !u!95 &1613528456630685386
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7414382245991600218}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0ef63528b404b44aa98b5e92127523e7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7315875509543231255
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -353,11 +393,19 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 6918180991653212292}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &3744183121415805725
+--- !u!222 &5627185927920942919
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7414382245991600218}
+  m_CullTransparentMesh: 1
+--- !u!114 &6918180991653212292
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -366,42 +414,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 7414382245991600218}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a729a0a6f1ca6447bb3738f379d4211f, type: 3}
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handle: {fileID: 3293304545063536334}
-  backgroundDisabled: {fileID: 5532753507340257872}
-  backgroundActive: {fileID: 5849599420838301847}
-  animationDuration: 0.25
-  slideEase:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  handleOffPosition: {x: -40, y: 0}
-  handleOnPosition: {x: 40, y: 0}
-  OnToggleOn:
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.003921569}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 5, y: 5, z: 5, w: 5}
+  m_Maskable: 0
+  m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  OnToggleOff:
-    m_PersistentCalls:
-      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1

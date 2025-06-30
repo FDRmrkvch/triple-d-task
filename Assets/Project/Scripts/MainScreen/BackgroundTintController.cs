@@ -1,93 +1,80 @@
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.Rendering;
-using System.Collections;
 
+/// <summary>
+/// Controls background tint visual effects using legacy Animation component.
+/// Handles show/hide transitions via predefined animation clips.
+/// </summary>
 public class BackgroundTintController : MonoBehaviour
 {
     public static BackgroundTintController Instance { get; private set; }
 
-    [Header("Blur Volume")]
-    [SerializeField] private Volume blurVolume;
-    [SerializeField] private float targetBlurWeight = 1f;
+    [Header("Animation Component")]
+    [SerializeField] private Animation backgroundAnimation;
 
-    [Header("Dimmer Image")]
-    [SerializeField] private Image dimmerImage;
-    [Tooltip("0–100 percent")] public float targetDimmerOpacityPercent = 80f;
-
-    [Header("Transition Settings")]
-    [SerializeField] private float transitionDuration = 0.3f;
-    [SerializeField] private AnimationCurve slideEase = AnimationCurve.EaseInOut(0, 0, 1, 1);
-
-    private Coroutine transitionCoroutine;
+    [Header("Clip Names")]
+    [SerializeField] private string showClipName = "BackgroundTint_Show";
+    [SerializeField] private string hideClipName = "BackgroundTint_Hide";
 
     private void Awake()
     {
+        // Ensure singleton instance
         if (Instance == null)
         {
             Instance = this;
         }
         else
         {
-            Debug.LogWarning("[BackgroundTintController] Duplicate instance found, destroying.");
+            Debug.LogWarning("[BackgroundTintController] Duplicate instance found. Destroying this one.");
             Destroy(gameObject);
+            return;
+        }
+
+        // Try to get the Animation component if not assigned
+        if (backgroundAnimation == null)
+        {
+            backgroundAnimation = GetComponent<Animation>();
+            if (backgroundAnimation == null)
+            {
+                Debug.LogWarning("[BackgroundTintController] No Animation component assigned or found.");
+            }
         }
     }
 
+    /// <summary>
+    /// Plays the show animation (e.g., fade in + blur).
+    /// </summary>
     public void ApplyEffects()
     {
-        float targetAlpha = Mathf.Clamp01(targetDimmerOpacityPercent / 100f);
-        StartTransition(targetBlurWeight, targetAlpha);
+        PlayClip(showClipName);
     }
 
+    /// <summary>
+    /// Plays the hide animation (e.g., fade out + remove blur).
+    /// </summary>
     public void ResetEffects()
     {
-        StartTransition(0f, 0f);
+        PlayClip(hideClipName);
     }
 
-    private void StartTransition(float toWeight, float toAlpha)
+    /// <summary>
+    /// Helper method to play a clip by name if it exists.
+    /// </summary>
+    private void PlayClip(string clipName)
     {
-        if (transitionCoroutine != null)
-            StopCoroutine(transitionCoroutine);
-
-        transitionCoroutine = StartCoroutine(TransitionRoutine(toWeight, toAlpha));
-    }
-
-    private IEnumerator TransitionRoutine(float toWeight, float toAlpha)
-    {
-        float fromWeight = blurVolume != null ? blurVolume.weight : 0f;
-        float fromAlpha = dimmerImage != null ? dimmerImage.color.a : 0f;
-        float time = 0f;
-
-        while (time < transitionDuration)
+        if (backgroundAnimation == null)
         {
-            float t01 = Mathf.Clamp01(time / transitionDuration);
-            float t = slideEase.Evaluate(t01);
-
-            if (blurVolume != null)
-                blurVolume.weight = Mathf.Lerp(fromWeight, toWeight, t);
-
-            if (dimmerImage != null)
-            {
-                Color c = dimmerImage.color;
-                c.a = Mathf.Lerp(fromAlpha, toAlpha, t);
-                dimmerImage.color = c;
-            }
-
-            time += Time.deltaTime;
-            yield return null;
+            Debug.LogWarning("[BackgroundTintController] Missing Animation component.");
+            return;
         }
 
-        if (blurVolume != null)
-            blurVolume.weight = toWeight;
-
-        if (dimmerImage != null)
+        AnimationClip clip = backgroundAnimation.GetClip(clipName);
+        if (clip != null)
         {
-            Color c = dimmerImage.color;
-            c.a = toAlpha;
-            dimmerImage.color = c;
+            backgroundAnimation.Play(clip.name);
         }
-
-        transitionCoroutine = null;
+        else
+        {
+            Debug.LogWarning($"[BackgroundTintController] Animation clip '{clipName}' not found.");
+        }
     }
 }
